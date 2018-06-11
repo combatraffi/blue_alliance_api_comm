@@ -18,15 +18,11 @@ for year in range(2013, 2019):
     returned_data = str(response.content).split('match_number')
     del returned_data[0]
     match_list = [x[3:x.index(',')] for x in returned_data]
-    print(year)
+    print('Year: {} | Matches Played: {}'.format(year, len(match_list)))
     print(match_list)
     complete_match_list.extend(match_list)
 
-print()
-print('Matches Played: {}'.format(len(complete_match_list)))
-print()
-
-
+print("Total Matches Played: {}".format(len(complete_match_list)))
 """
 for i in complete_match_list:
     print(i)
